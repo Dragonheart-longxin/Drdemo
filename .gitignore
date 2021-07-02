@@ -1,5 +1,11 @@
 # Visual Studio File and Folder
 .vs/
+**/*.user
+**/*.filters
 
 # Build Folder
 build/
+deps/**/build/
+
+# Programme Temp Files
+RayTracingDemo/output/
