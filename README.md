@@ -4,7 +4,7 @@
 会更新学习到的知识
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Dragonheart-longxin/Drdemo?style=flat-square)
-![license](https://img.shields.io/badge/license-MIT-blue)
+![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 ### 使用方式
 - __Visual Studio 2019__
@@ -12,7 +12,7 @@
 
 __1. 克隆仓库__
 
-    __`git clone https://github.com/Dragonheart-longxin/Drdemo.git`__
+  __`git clone https://github.com/Dragonheart-longxin/Drdemo.git`__
 
 __2. 用`Visual Studio 2019`打开`Drdemo.sln`__
 __3. 选择一个项目作为启动项目(右键项目->设为启动项目)__
@@ -24,11 +24,11 @@ __4. 编译运行(如果依赖库无法使用需要自行编译`deps`目录下�
 
 ### 项目总览
 
-- GluttonousSnake 贪吃蛇
-  - 依赖SFML
+- __GluttonousSnake__ 贪吃蛇
+  - 依赖 __SFML__
 
-- Minesweeper 扫雷
-  - 依赖SFML
+- __Minesweeper__ 扫雷
+  - 依赖 __SFML__
 
 
 ### 依赖库
