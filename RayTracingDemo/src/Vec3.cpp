@@ -1,4 +1,4 @@
-#include "../include/Vec3.h"
+﻿#include "../include/Vec3.h"
 
 inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
     return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];

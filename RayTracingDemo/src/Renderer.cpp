@@ -1,4 +1,4 @@
-#include "../include/Renderer.h"
+﻿#include "../include/Renderer.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -20,7 +20,7 @@ bool Renderer::renderPPM()
     std::fstream fs;
     std::ostringstream out;
 
-    fs.open("output/output.ppm", std::ios::out);
+    fs.open("output.ppm", std::ios::out);
 
     std::cerr << "Start render." << std::flush;
     out << "P3\n" << imageWidth << ' ' << imageHeight << "\n255\n";

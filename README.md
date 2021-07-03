@@ -3,6 +3,7 @@
 #### DragonheartLX的练习集
 会更新学习到的知识
 
+![GitHub repo size](https://img.shields.io/github/repo-size/Dragonheart-longxin/Drdemo?style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Dragonheart-longxin/Drdemo?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 

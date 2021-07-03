@@ -1,4 +1,4 @@
-#include "../RayTracingDemo.h"
+﻿#include "../RayTracingDemo.h"
 
 int main() {
 
