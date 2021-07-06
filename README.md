@@ -5,7 +5,7 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Dragonheart-longxin/Drdemo?style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Dragonheart-longxin/Drdemo?style=flat-square)
-![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+![GitHub](https://img.shields.io/github/license/Dragonheart-longxin/Drdemo?color=blue&style=flat-square)
 
 ### 使用方式
 - __Visual Studio 2019__
@@ -26,21 +26,15 @@ __4. 编译运行(如果依赖库无法使用需要自行编译`deps`目录下�
 ### 项目总览
 
 - __GluttonousSnake__ 贪吃蛇
-  - 依赖 __SFML__
+  - 依赖 [![SFML](https://img.shields.io/badge/SFML-grey?logo=SFML&style=flat-square)](https://github.com/SFML/SFML)
 
 - __Minesweeper__ 扫雷
-  - 依赖 __SFML__
+  - 依赖 [![SFML](https://img.shields.io/badge/SFML-grey?logo=SFML&style=flat-square)](https://github.com/SFML/SFML)
 
 
 ### 依赖库
 
-<a href = "https://github.com/SFML/SFML" title = "SFML">
-    <img src = "https://camo.githubusercontent.com/f1cd6496aa46486fae925d16a7eac97db76be820a37cb33ad2bc7cedf4191183/68747470733a2f2f7777772e73666d6c2d6465762e6f72672f696d616765732f6c6f676f2e706e67" width = 40%>
-</a>
-
-<p>
-    <wbr>
-</p>
+[![SFML](https://img.shields.io/badge/SFML-grey?logo=SFML&style=flat-square)](https://github.com/SFML/SFML)
 
 ### 在爱发电上支持我，谢谢各位!
 

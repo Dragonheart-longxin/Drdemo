@@ -1,34 +1,102 @@
-﻿#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <SFML/Graphics.hpp>
+
+using namespace std;
+
+struct Cell
+{
+    int x;
+    int y;
+    bool isLive = false;
+};
+
+class CellMap;
 
 int main()
 {
-    /*设置窗口 大小200x200，标题SFMLDemo*/
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFMLDemo");
-    /*创建图形 圆 半径 100 像素*/
-    sf::CircleShape shape(100.f);
-    /*设置填充颜色 蓝*/
-    shape.setFillColor(sf::Color::Blue);
+    vector<Cell> cells;
+    vector<Cell> newCells;
 
-    /*绘制循环(窗口未关闭时)*/
-    while (window.isOpen())
-    {
+    cells.push_back({ 0, 0, true });
+    cells.push_back({ 0, 0, true });
+    cells.push_back({ 0, 0, true });
+    cells.push_back({ 0, 0, true });
+    cells.push_back({ 0, 0, true });
+    cells.push_back({ 0, 0, true });
 
-        sf::Event event;
-        /*收取事件*/
-        while (window.pollEvent(event))
-        {
-            /*事件为关闭窗口时，关闭窗口，退出程序*/
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "GameOfLife by DragonheartLX");
 
-        /*清屏*/
-        window.clear();
-        /*绘制*/
-        window.draw(shape);
-        /*显示*/
-        window.display();
-    }
 
     return 0;
 }
+
+void CellMap::update(vector<Cell> cells, int deep, vector<Cell> &nextGen)
+{
+    vector<Cell> roundCells;
+
+    for (Cell cell: cells)
+    {
+        roundCells.push_back({ cell.x - 1, cell.y + 1 , true });
+        roundCells.push_back({ cell.x    , cell.y + 1 , true });
+        roundCells.push_back({ cell.x + 1, cell.y + 1 , true });
+        roundCells.push_back({ cell.x - 1, cell.y     , true });
+        roundCells.push_back({ cell.x + 1, cell.y     , true });
+        roundCells.push_back({ cell.x - 1, cell.y - 1 , true });
+        roundCells.push_back({ cell.x    , cell.y - 1 , true });
+        roundCells.push_back({ cell.x + 1, cell.y - 1 , true });
+
+        if (deep == 0)
+        {
+            int count = 0;
+            for (Cell live: cells)
+            {
+                for (Cell round: roundCells)
+                {
+                    if (round.isLive) 
+                        ++count;
+                }
+
+                if (cell.isLive)
+                {
+                    if (count == 2 || count == 3)
+                        nextGen.push_back(cell);
+
+
+                }else if (!cell.isLive)
+                {
+                    if (count == 3)
+                        nextGen.push_back({ cell.x, cell.y, true });
+                }
+
+            }
+        }
+        else if (deep > 0) {
+
+            update(roundCells, deep--, nextGen);
+
+        }
+    }
+
+}
+
+void CellMap::clear(vector<Cell>& cells)
+{
+    for (unsigned int i = 0; i < cells.size(); i++)
+    {
+        for (unsigned int  j = i + 1; j < cells.size(); j++)
+        {
+            if (cells[i].x == cells[j].x && cells[i].y == cells[j].y)
+                cells.erase(cells.begin() + j);
+        }
+    }
+}
+
+class CellMap: public sf::RectangleShape{
+private:
+    vector<Cell> _cells;
+
+public:
+    void update(vector<Cell> cells, int deep, vector<Cell>& nextGen);
+    void clear(vector<Cell>& cells);
+    void draw();
+};
